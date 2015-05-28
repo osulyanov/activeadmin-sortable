@@ -13,7 +13,11 @@
           type: 'post',
           data: { position: ui.item.index() },
           error: function() { alert("Saving sortable error"); },
-          success: function() { window.location.reload() }
+          success: function() {
+              $("tr", $('.handle').closest('tbody')).removeClass('even odd');
+              $("tr", $('.handle').closest('tbody')).filter(":even").addClass('odd');
+              $("tr", $('.handle').closest('tbody')).filter(":odd").addClass('even');
+          }
         });
       }
     });
