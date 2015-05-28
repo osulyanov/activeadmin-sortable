@@ -11,7 +11,8 @@
         $.ajax({
           url: url,
           type: 'post',
-          data: { position: ui.item.index() + 1 },
+          data: { position: ui.item.index() },
+          error: function() { alert("Saving sortable error"); },
           success: function() { window.location.reload() }
         });
       }
